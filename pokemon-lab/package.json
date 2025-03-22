@@ -1,11 +1,12 @@
 {
   "name": "pokemon-lab",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "lite-server",
-    "dev": "tsc && lite-server"
+    "build": "tsc && vite build",
+    "start": "lite-server --baseDir=dist",
+    "dev": "tsc && vite build && lite-server --baseDir=dist"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,7 @@
   "description": "",
   "devDependencies": {
     "lite-server": "^2.6.1",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2"
   }
 }

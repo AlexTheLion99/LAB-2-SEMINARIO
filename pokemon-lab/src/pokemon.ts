@@ -1,17 +1,18 @@
-
-import { fetchFromApi } from './api';
-
-export interface PokemonSprites {
-  [key: string]: string | null;
-}
-
-export interface PokemonResponse {
+export interface Pokemon {
   id: number;
   name: string;
-  sprites: PokemonSprites;
+  weight: number;
+  sprites: {
+    front_default: string;
+  };
+  types: {
+    type: {
+      name: string;
+    };
+  }[];
+  abilities: {
+    ability: {
+      name: string;
+    };
+  }[];
 }
-
-export function fetchPokemon(nameOrId: string) {
-  return fetchFromApi<PokemonResponse>('pokemon', nameOrId);
-}
-
